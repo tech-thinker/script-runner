@@ -1,5 +1,5 @@
 FROM alpine:3.13
-LABEL maintainer="Asif Mohammad Mollah <asif@mindship.io>"
+LABEL maintainer="Asif Mohammad Mollah <https://mrasif.in>"
 RUN apk update
 RUN apk add curl ca-certificates
 WORKDIR /script
