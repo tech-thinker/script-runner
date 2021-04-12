@@ -9,14 +9,14 @@ It will run script from any public url or local file.
 ### Using Docker:
 - Create `Dockerfile`
 ```
-FROM techthinkerorg/script-runner:1.1.0
+FROM techthinkerorg/script-runner:1.2.0
 WORKDIR /script
 COPY ./your-script.sh /script/
 ENV SCRIPT_PATH "your-script.sh"
 ```
 or
 ```
-FROM techthinkerorg/script-runner:1.1.0
+FROM techthinkerorg/script-runner:1.2.0
 ENV SCRIPT_URL "script-location-url.sh"
 ```
 - Run `docker build  -f ./Dockerfile -t your-image-name .`
@@ -29,7 +29,7 @@ version: "3"
 services:
   script:
     container_name: script-runner
-    image: techthinkerorg/script-runner:1.1.0
+    image: techthinkerorg/script-runner:1.2.0
     environment:
       - SCRIPT_URL=script-location-url.sh
 ```
@@ -51,7 +51,7 @@ spec:
         spec:
           containers:
             - name: your-deployment-cron
-              image: techthinkerorg/script-runner:1.1.0
+              image: techthinkerorg/script-runner:1.2.0
               env:
                 - name: SCRIPT_URL
                   value: "script-location-url.sh"
